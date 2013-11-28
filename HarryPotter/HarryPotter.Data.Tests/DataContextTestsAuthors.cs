@@ -23,7 +23,8 @@ namespace HarryPotter.Data.Tests
         public void Setup()
         {
             string cnn = ConfigurationManager.ConnectionStrings["storedb_development"].ConnectionString;
-            this._ndbUnitTest = new NDbUnit.Core.MySqlClient.MySqlDbUnitTest(cnn);
+            //this._ndbUnitTest = new NDbUnit.Core.MySqlClient.MySqlDbUnitTest(cnn);
+            this._ndbUnitTest = new NDbUnit.Core.SqlClient.SqlDbUnitTest(cnn);
             this._ndbUnitTest.ReadXmlSchema("StoreSchema.xsd");
             this._ndbUnitTest.PerformDbOperation(NDbUnit.Core.DbOperationFlag.DeleteAll);
 
